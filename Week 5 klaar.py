@@ -79,5 +79,5 @@ Button(frame3, text='Bereken', command=calculate_bmi).pack(side=LEFT)
 Button(frame3, text='Reset', command=reset_entry).pack(side=LEFT)
 Button(frame3, text='uitloggen', command=lambda: ws.destroy()).pack(side=RIGHT)
 
-# ws = tk staat ergens boven maar is gewoon een aanduiding voor python dat je tkinter programma hier dus stopt
+# ws = tk
 ws.mainloop()
