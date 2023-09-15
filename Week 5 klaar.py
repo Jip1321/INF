@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 
-# je kunt in python canvas gebruiken via tkinter en vanuit daaruit is het mogelijk om hetzelfde te krijgen zoals je kunt in html5 wat we vorig jaar hebben geleerd
+# je kunt in python canvas gebruiken via tkinter en vanuit daaruit is het mogelijk om soortvan hetzelfde te krijgen zoals je kunt in html5 wat we vorig jaar hebben geleerd
 # voeg je hier buttons toe dan kan je berekeningen achter zetten en met de functie messagebox kan je meldingen laten zien op basis van de berekeningen
 
 
