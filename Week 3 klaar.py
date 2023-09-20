@@ -131,5 +131,4 @@ if __name__ == "__main__":
 # main gebruik ik om programma op te roepen elke waarde komt daar terug
 # if __name__ == "__main__":
 #    main()
-# is hetzelfde als print() maar met deze optie gaat python via een ander manier berekenen wat sneller is/schijnt
 # is benodigt in pycharm waar ik normaal python gebruik ( is een  IDE specefiek voor Pyhton)
