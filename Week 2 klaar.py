@@ -23,9 +23,9 @@ while True:
 
 
     for x in range(zijde + 1):
-        ogen += zijde
+        ogen += x
 
  # dit gedeelte kan ook paralel in print worden gedaan maar staat zo netter vind ik( refeer naar code die joram uit h5f heeft waar hij dat deed)
-    aantal_ogen = int(ogen / 2)
+   # aantal_ogen = int(ogen / 2)
 
-    print(f"een dobbelsteen met {zijde} zijdes, Dan krijg je {aantal_ogen} stippen.")
+    print(f"een dobbelsteen met {zijde} zijdes, Dan krijg je {ogen} stippen.")
