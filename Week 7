@@ -1,0 +1,120 @@
+import tkinter as tk
+import turtle
+
+def squa():
+      for i in range(4):
+        t.fd(50)
+        t.rt(90)
+
+def hexa():
+    for i in range(6):
+        t.forward(50)
+        t.left(300)
+    
+def tria():
+    for i in range(3):
+        t.forward(50)
+        t.left(120)
+    
+    
+
+def octa():
+    for i in range(8):
+        t.forward(50)
+        t.left(45)
+
+def reset():
+    t.reset()
+
+def links():
+    t.left(10)
+   
+
+def rechts():
+    t.left(-10)
+
+def voren():
+    t.forward(5) 
+
+def teken():
+    t.down()
+
+def teken1():
+    t.up()
+
+def cirkel():
+   r = 50
+   t.circle(r) 
+
+def green():
+    t.pencolor("green")
+
+def red():
+    t.pencolor("red")
+
+def blue():
+    t.pencolor("blue")
+
+def black():
+    t.pencolor("black")
+
+    
+
+ 
+
+
+root = tk.Tk()
+root.geometry("600x500")
+canvas = tk.Canvas(root)
+canvas.place(x = 0, y = 0, width = 600, height = 500)
+screen = turtle.ScrolledCanvas(canvas)
+screen.place(x = 0, y = 0, width = 600, height = 500)
+t = turtle.RawTurtle(screen._canvas)
+t.speed(5)
+t.width(3)
+
+draw_button = tk.Button(root, text = "cirkel", command = lambda : cirkel())
+draw_button.place(x = 250, y = 460, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "links", command = lambda : links())
+draw_button.place(x = 10, y = 460, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "voren", command = lambda : voren())
+draw_button.place(x = 50, y = 440, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "rechts", command = lambda : rechts())
+draw_button.place(x = 90, y = 460, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "pen omlaag", command = lambda : teken())
+draw_button.place(x = 350, y = 460, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "pen omhoog", command = lambda : teken1())
+draw_button.place(x = 350, y = 440, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "reset", command = lambda : reset())
+draw_button.place(x = 250, y = 440, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "vierhoek", command = lambda : squa())
+draw_button.place(x = 450, y = 440, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "hexagon", command = lambda : hexa())
+draw_button.place(x = 450, y = 460, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "driehoek", command = lambda : tria())
+draw_button.place(x = 450, y = 420, width = 100, height = 20)
+
+draw_button = tk.Button(root, text = "octagon", command = lambda : octa())
+draw_button.place(x = 450, y = 400, width = 100, height = 20)
+
+draw_button = tk.Button(root, background='red', command = lambda : red())
+draw_button.place(x = 450, y = 350, width = 50, height = 20,)
+
+draw_button = tk.Button(root, background='green', command = lambda : green())
+draw_button.place(x = 500, y = 350, width = 50, height = 20,)
+
+draw_button = tk.Button(root, background='blue',command = lambda : blue())
+draw_button.place(x = 500, y = 370, width = 50, height = 20,)
+draw_button = tk.Button(root, background='black', command = lambda : black())
+draw_button.place(x = 450, y = 370, width = 50, height = 20,)
+
+root.mainloop()
