@@ -1,4 +1,4 @@
-def teken_bord(bord):
+def tekenbord(bord):
     print("    1   2   3 ")
     print("  -----------")
     print("A | " + bord[0] + " | " + bord[1] + " | " + bord[2])
@@ -25,7 +25,7 @@ spelers = ["X", "O"]
 Speler1 = 0  
 
 for beurt in range(9):  
-    teken_bord(bord)
+    tekenbord(bord)
     
     while True:
         rij = input(f"Speler {spelers[Speler1]} kies uit verticale rij a, b of c: ")
@@ -51,12 +51,12 @@ for beurt in range(9):
             print("invalide nummer")
 
     if winnaar(bord, spelers[Speler1]):
-        teken_bord(bord)
+        tekenbord(bord)
         print(f"{spelers[Speler1]} wint")
         break
     
     Speler1 = 1 - Speler1  # Wissel van beurt (x == 0, O == 1. Lijn 24 verwijst dat x als eerst begint)
 
-teken_bord(bord)
+tekenbord(bord)
 if not winnaar(bord, spelers[0]) and not winnaar(bord, spelers[1]):
     print("Remise")
