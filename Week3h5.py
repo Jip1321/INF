@@ -28,8 +28,8 @@ for beurt in range(9):
     tekenbord(bord)
     
     while True:
-        rij = input(f"Speler {spelers[Speler1]} kies uit verticale rij a, b of c: ")
-        kolom = int(input(f"Speler {spelers[Speler1]} kies uit horizontale rij 1, 2 of 3: ")) - 1 
+        rij = input(f"Speler {spelers[Speler1]} kies uit a, b of c: ").upper()
+        kolom = int(input(f"Speler {spelers[Speler1]} kies ui 1, 2 of 3: ")) - 1 
         
         if rij == "A":
             index = kolom
