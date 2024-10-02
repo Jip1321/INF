@@ -349,6 +349,7 @@ Als je alles goed hebt gedaan krijg je een plaatje in beeld. Lukt het niet? Kijk
 
 Tip: stel vóór het tekenen de snelheid van je turtle in op maximaal: t.speed(10). Of als je helemaal geen animatie wilt: t.speed(0). Anders ben je (zeker met het laatste bestand) lang aan het wachten...
 
+dit staat in het bestand tekening.txt
 
 u
 l90
