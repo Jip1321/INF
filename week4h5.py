@@ -1,11 +1,7 @@
-Exception has occurred: ValueError
-not enough values to unpack (expected 2, got 1)
-  File "C:\Users\141760\Documents\week4h5.py", line 16, in uitvoeren
-    radius, color = argument.split(',')
-  File "C:\Users\141760\Documents\week4h5.py", line 48, in <module>
-    uitvoeren(regel) 
 
-deze foutmelding krijg ik bij deze file (die heeft tekening2.txt) waar dit in zit. 
+
+dit is file tekening2.txt:
+
 i#F6D02F
 s
 u
@@ -1099,4 +1095,12 @@ while regel := file.readline():
 
 turtle.mainloop()
 
-herschrijf deze coderin zodat het tekening2.txt kan tekenen
+deze codering is gemaakt om files te lezen en te tekenen, bij tekening2.txt krijg ik deze foutmelding:
+Exception has occurred: ValueError
+not enough values to unpack (expected 2, got 1)
+  File "C:\Users\141760\Documents\week4h5.py", line 16, in uitvoeren
+    radius, color = argument.split(',')
+  File "C:\Users\141760\Documents\week4h5.py", line 48, in <module>
+    uitvoeren(regel) 
+
+geef mij de codering waarbij dit opgelost is
