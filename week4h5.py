@@ -1,45 +1,55 @@
-import turtle as t
-
 def uitvoeren(regel):
-    commando = regel[0]
-    argument = regel[1:].strip()
-
+    commando = regel[0]  
+    argument = regel[1:].strip('\n') 
+    
     match commando:
-        case 'f':
+        case 'f':  
             t.forward(float(argument))
-        case 'b':
+        case 'b': 
             t.backward(float(argument))
-        case 'l':
+        case 'l':  
             t.left(float(argument))
-        case 'r':
+        case 'r':  
             t.right(float(argument))
-        case 'o':
-            radius, color = argument.split(',')
-            t.color(color)
-            t.circle(float(radius))
-        case 'c':
-            t.color(argument)
-        case 's':
-            t.penup()
-        case 'd':
-            t.pendown()
-        case 'g':
-            x, y = map(float, argument.split(','))
-            t.goto(x, y)
-        case 'p':
+        case 'o':  
+            (radius, color) = argument.split(',')
+            t.dot(float(radius), color)
+        case 's':  
             t.begin_fill()
-        case 'e':
+        case 'e':  
             t.end_fill()
+        case 'p': 
+            t.pencolor(argument)
+        case 'i':  
+            t.fillcolor(argument)
+        case 'c':  
+            (rad, deg) = argument.split(',')
+            t.circle(float(rad), float(deg))
+        case 'u':  
+            t.up()
+        case 'd':  
+            t.down()
+        case 'g':  
+            (x, y) = argument.split(',')
+            t.goto(float(x), float(y))
         case _:
             print(f"Onbekend commando: {commando}")
+import turtle
 
-def main():
-    t.speed(10)
-    with open('tekening2.txt', 'r') as file:
-        for regel in file:
-            if regel.strip(): 
-                uitvoeren(regel)
-    t.done()
+turtle.speed(10)
 
-if __name__ == "__main__":
-    main()
+
+
+s = turtle.getscreen()
+t = turtle.Turtle()
+
+
+file = open("tekening2.txt", "r")
+
+
+while regel := file.readline():
+    uitvoeren(regel)
+
+
+
+turtle.mainloop()
