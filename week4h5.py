@@ -1041,7 +1041,7 @@ s
 c10,360
 e
 
-herschrijf deze python codering zodat het kan tekenen
+
 
 import turtle
 
@@ -1079,6 +1079,8 @@ def uitvoeren(regel):
         x, y = argument.split(',')
         t.goto(float(x), float(y))
     elif commando == '':
+
+  herschrijf deze python codering zodat het file tekening2.txt kan tekenen
         t.clear()
     else:
         print(f"Onbekend commando: {commando}")
