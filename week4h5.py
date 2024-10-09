@@ -35,7 +35,7 @@ def uitvoeren(regel):
 
 def main():
     t.speed(10)
-    with open('tekeningen2.txt', 'r') as file:
+    with open('tekening2.txt', 'r') as file:
         for regel in file:
             if regel.strip():  # Check if the line is not empty
                 uitvoeren(regel)
