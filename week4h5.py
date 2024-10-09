@@ -1,4 +1,56 @@
+can this code read this file called tekeningen2.txt and draw it? if not rewrite the code: 
+import turtle as t
 
+def uitvoeren(regel):
+    commando = regel[0]
+    argument = regel[1:].strip('\n')
+
+    match commando:
+        case 'f':  
+            t.forward(float(argument))
+        case 'b':  
+            t.backward(float(argument))
+        case 'l':  
+            t.left(float(argument))
+        case 'r':  
+            t.right(float(argument))
+        case 'o':  
+            radius, color = argument.split(',')
+            t.color(color)
+            t.circle(float(radius))
+        case 'c': 
+            t.color(argument)
+        case 's':  
+            t.penup()
+        case 'd':  
+            t.pendown()
+        case 'g': 
+            x, y = map(float, argument.split(','))
+            t.goto(x, y)
+        case 'e':  
+            
+            pass
+        case 'p':  
+            t.begin_fill()
+        case 'f':  
+            t.end_fill()
+        case 'u':  
+           
+            pass
+        case _:
+            print(f"Onbekend commando: {commando}")
+
+
+def main():
+    t.speed(10)  
+    with open('tekening2.txt', 'r') as file:
+        for regel in file:
+            uitvoeren(regel)
+    t.done() 
+
+if __name__ == "__main__":
+    main()
+ 
 
 dit is file tekening2.txt:
 
@@ -1039,68 +1091,3 @@ e
 
 
 
-def uitvoeren(regel):
-    commando = regel[0]  
-    argument = regel[1:].strip('\n') 
-    
-    match commando:
-        case 'f':  
-            t.forward(float(argument))
-        case 'b': 
-            t.backward(float(argument))
-        case 'l':  
-            t.left(float(argument))
-        case 'r':  
-            t.right(float(argument))
-        case 'o':  
-            (radius, color) = argument.split(',')
-            t.dot(float(radius), color)
-        case 's':  
-            t.begin_fill()
-        case 'e':  
-            t.end_fill()
-        case 'p': 
-            t.pencolor(argument)
-        case 'i':  
-            t.fillcolor(argument)
-        case 'c':  
-            (rad, deg) = argument.split(',')
-            t.circle(float(rad), float(deg))
-        case 'u':  
-            t.up()
-        case 'd':  
-            t.down()
-        case 'g':  
-            (x, y) = argument.split(',')
-            t.goto(float(x), float(y))
-        case _:
-            print(f"Onbekend commando: {commando}")
-import turtle
-
-turtle.speed(10)
-
-
-
-s = turtle.getscreen()
-t = turtle.Turtle()
-
-
-file = open("tekening2.txt", "r")
-
-
-while regel := file.readline():
-    uitvoeren(regel)
-
-
-
-turtle.mainloop()
-
-deze codering is gemaakt om files te lezen en te tekenen, bij tekening2.txt krijg ik deze foutmelding:
-Exception has occurred: ValueError
-not enough values to unpack (expected 2, got 1)
-  File "C:\Users\141760\Documents\week4h5.py", line 16, in uitvoeren
-    radius, color = argument.split(',')
-  File "C:\Users\141760\Documents\week4h5.py", line 48, in <module>
-    uitvoeren(regel) 
-
-geef mij de codering waarbij dit opgelost is
