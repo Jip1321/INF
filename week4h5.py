@@ -1043,55 +1043,60 @@ e
 
 
 
-import turtle
-
 def uitvoeren(regel):
     commando = regel[0]  
     argument = regel[1:].strip('\n') 
-
-    if commando == 'f':
-        t.forward(float(argument))
-    elif commando == 'b':
-        t.backward(float(argument))
-    elif commando == 'l':
-        t.left(float(argument))
-    elif commando == 'r':
-        t.right(float(argument))
-    elif commando == 'o':
-        radius, color = argument.split(',')
-        t.dot(float(radius), color)
-    elif commando == 's':
-        t.begin_fill()
-    elif commando == 'e':
-        t.end_fill()
-    elif commando == 'p':
-        t.pencolor(argument)
-    elif commando == 'i':
-        t.fillcolor(argument)
-    elif commando == 'c':
-        rad, deg = argument.split(',')
-        t.circle(float(rad), float(deg))
-    elif commando == 'u':
-        t.up()
-    elif commando == 'd':
-        t.down()
-    elif commando == 'g':
-        x, y = argument.split(',')
-        t.goto(float(x), float(y))
-    elif commando == '':
-
-  herschrijf deze python codering zodat het file tekening2.txt kan tekenen
-        t.clear()
-    else:
-        print(f"Onbekend commando: {commando}")
-
+    
+    match commando:
+        case 'f':  
+            t.forward(float(argument))
+        case 'b': 
+            t.backward(float(argument))
+        case 'l':  
+            t.left(float(argument))
+        case 'r':  
+            t.right(float(argument))
+        case 'o':  
+            (radius, color) = argument.split(',')
+            t.dot(float(radius), color)
+        case 's':  
+            t.begin_fill()
+        case 'e':  
+            t.end_fill()
+        case 'p': 
+            t.pencolor(argument)
+        case 'i':  
+            t.fillcolor(argument)
+        case 'c':  
+            (rad, deg) = argument.split(',')
+            t.circle(float(rad), float(deg))
+        case 'u':  
+            t.up()
+        case 'd':  
+            t.down()
+        case 'g':  
+            (x, y) = argument.split(',')
+            t.goto(float(x), float(y))
+        case _:
+            print(f"Onbekend commando: {commando}")
+import turtle
 
 turtle.speed(10)
+
+
+
+s = turtle.getscreen()
 t = turtle.Turtle()
 
 
-with open("tekening2.txt", "r") as file:
-    for regel in file:
-        uitvoeren(regel)
+file = open("tekening2.txt", "r")
+
+
+while regel := file.readline():
+    uitvoeren(regel)
+
+
 
 turtle.mainloop()
+
+herschrijf deze coderin zodat het tekening2.txt kan tekenen
