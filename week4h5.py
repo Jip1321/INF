@@ -1,3 +1,5 @@
+import turtle
+
 def uitvoeren(regel):
     commando = regel[0]  
     argument = regel[1:].strip('\n') 
@@ -12,8 +14,10 @@ def uitvoeren(regel):
         case 'r':  
             t.right(float(argument))
         case 'o':  
-            (radius, color) = argument.split(',')
-            t.dot(float(radius), color)
+            
+            if ',' in argument:
+                radius, color = argument.split(',')
+                t.dot(float(radius), color)
         case 's':  
             t.begin_fill()
         case 'e':  
@@ -23,33 +27,28 @@ def uitvoeren(regel):
         case 'i':  
             t.fillcolor(argument)
         case 'c':  
-            (rad, deg) = argument.split(',')
-            t.circle(float(rad), float(deg))
+            if ',' in argument:
+                rad, deg = argument.split(',')
+                t.circle(float(rad), float(deg))
         case 'u':  
             t.up()
         case 'd':  
             t.down()
         case 'g':  
-            (x, y) = argument.split(',')
-            t.goto(float(x), float(y))
+            if ',' in argument:
+                x, y = argument.split(',')
+                t.goto(float(x), float(y))
         case _:
             print(f"Onbekend commando: {commando}")
-import turtle
+
 
 turtle.speed(10)
-
-
-
 s = turtle.getscreen()
 t = turtle.Turtle()
 
 
-file = open("tekening2.txt", "r")
-
-
-while regel := file.readline():
-    uitvoeren(regel)
-
-
+with open("tekening2.txt", "r") as file:
+    while regel := file.readline():
+        uitvoeren(regel)
 
 turtle.mainloop()
